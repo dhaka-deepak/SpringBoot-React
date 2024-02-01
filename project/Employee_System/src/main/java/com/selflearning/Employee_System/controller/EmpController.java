@@ -19,7 +19,7 @@ public class EmpController {
     private EmpService empService;
 
     @PostMapping("/save")
-    public ResponseEntity<Emp> createEmp(@RequestBody Emp emp) {
+    public ResponseEntity<Emp> createEmp(@RequestBody @Valid Emp emp) {
         return new ResponseEntity<Emp>(empService.createEmp(emp), HttpStatus.CREATED);
     }
 
